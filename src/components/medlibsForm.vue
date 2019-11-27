@@ -22,11 +22,11 @@
                     v-text="'Output Paragraph'" />
                 <p v-text="firstParagraph" />
                 <p v-text="secondParagraph" />
-                <div class="options">
+                <!-- <div class="options">
                     <div class="option selected"
                         @click="copyToClipboard"
                         v-text="'Copy to Clipboard'" />
-                </div>
+                </div> -->
             </div>
         </div>
     </section>
