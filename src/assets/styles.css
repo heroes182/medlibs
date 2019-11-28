@@ -10,12 +10,14 @@ html {
     text-align: center;
     color: #2c3e50;
 }
-.fields {
+.flex {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
 }
 .field {
     flex: 1;
+    flex-basis: 30%;
     border: 1px solid #ccc;
     border-radius: 4px;
     padding: 16px;
@@ -34,11 +36,9 @@ html {
     font-weight: bold;
     text-transform: capitalize;
 }
-.options {
-    display: flex;
-}
 .option {
     flex: 1;
+    font-size: 16px;
     font-weight: bold;
     border: 1px solid #333;
     border-radius: 4px;
@@ -56,13 +56,25 @@ html {
     opacity: 1;
     background: linear-gradient(#fff, #dedede);
 }
+input {
+    cursor: text;
+    outline: none;
+    flex: 1;
+    font-size: 16px;
+    font-weight: bold;
+    border: 1px solid #333;
+    border-radius: 4px;
+    padding: 4px;
+    margin: 0 1%;
+    color: #2c3e50;
+}
 .paragraph {
     text-align: left;
     margin-top: 0;
 }
 
-@media screen and (min-width: 640px) {
-    .fields {
+@media screen and (min-width: 920px) {
+    .flex {
         flex-direction: row;
     }
 }
