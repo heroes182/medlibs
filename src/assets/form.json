@@ -1,0 +1,17 @@
+[
+    {
+        "label": "Sleep Apnea",
+        "options": ["mild", "moderate", "severe"],
+        "value": "mild"
+    },
+    {
+        "label": "Central Sleep Apnea",
+        "options": ["mild", "moderate", "severe"],
+        "value": "mild"
+    },
+    {
+        "label": "Oxygen Average",
+        "options": ["< 88", "> 88"],
+        "value": "< 88"
+    }
+]
