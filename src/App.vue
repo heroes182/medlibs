@@ -1,16 +1,16 @@
 <template>
     <div id="app">
-        <medlibsForm />
+        <medlibs />
     </div>
 </template>
 
 <script>
-    import medlibsForm from '@/components/medlibsForm';
+    import medlibs from '@/views/medLibs';
 
     export default {
         name: 'app',
         components: {
-            medlibsForm
+            medlibs
         }
     };
 </script>
