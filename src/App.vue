@@ -1,16 +1,36 @@
 <template>
     <div id="app">
-        <medlibs />
+        <Form :fields="fields" />
+        <Output :computed-paragraph="computedParagraph" />
     </div>
 </template>
 
 <script>
-    import medlibs from '@/views/medLibs';
+    import fields from '@/assets/fields.json';
+    import paragraphs from '@/assets/paragraphs.json';
 
     export default {
-        name: 'app',
+        name: 'MedLibs',
         components: {
-            medlibs
+            'Form': () => import('@/components/form'),
+            'Output': () => import('@/components/output')
+        },
+        data () {
+            return {
+                name: 'medlibsForm',
+                fields: fields,
+                paragraphs: paragraphs
+            };
+        },
+        computed: {
+            computedParagraph () {
+                return this.paragraphs.NoOsa;
+            }
+        },
+        methods: {
+            findField (fieldName) {
+                return this.fields.find(field => { return field.label === fieldName });
+            }
         }
     };
 </script>
