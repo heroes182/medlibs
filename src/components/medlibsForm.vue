@@ -32,63 +32,6 @@
     </section>
 </template>
 
-<style scoped>
-    .fields {
-        display: flex;
-    }
-    .field {
-        flex: 1;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        padding: 16px;
-        margin: 0 0.5% 16px 0.5%;
-        background: #fff;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-    }
-    .label {
-        color: #333;
-        font-size: 82%;
-        display: block;
-        margin-bottom: 8px;
-        padding-bottom: 8px;
-        border-bottom: 1px solid #ccc;
-        text-align: left;
-        font-weight: bold;
-        text-transform: capitalize;
-    }
-    .options {
-        display: flex;
-    }
-    .option {
-        flex: 1;
-        font-weight: bold;
-        border: 1px solid #333;
-        border-radius: 4px;
-        cursor: pointer;
-        opacity: 0.8;
-        padding: 4px;
-        margin: 0 1%;
-        background: linear-gradient(#dedede, #ccc);
-    }
-    .selected {
-        border-color: #999;
-        opacity: 1;
-        background: linear-gradient(#fff, #dedede);
-    }
-    .option:active {
-        background: linear-gradient(#c4b8b8, #999);
-    }
-    p {
-        text-align: left;
-        margin-top: 0;
-    }
-    @media screen and (max-width: 640px) {
-        .fields {
-            flex-direction: column;
-        }
-    }
-</style>
-
 <script>
     export default {
         data () {
