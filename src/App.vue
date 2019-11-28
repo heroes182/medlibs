@@ -1,6 +1,5 @@
 <template>
     <div id="app">
-        <h1 v-text="name" />
         <medlibsForm />
     </div>
 </template>
@@ -12,11 +11,6 @@
         name: 'app',
         components: {
             medlibsForm
-        },
-        data () {
-            return {
-                name: 'MedLibs'
-            };
         }
     };
 </script>

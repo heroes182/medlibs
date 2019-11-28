@@ -1,7 +1,7 @@
 html {
     background: linear-gradient(rgb(183, 201, 238), rgb(130, 146, 179));
     height: 100%;
-    min-height: 100%;
+    min-height: 100vh;
 }
 #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -12,6 +12,7 @@ html {
 }
 .fields {
     display: flex;
+    flex-direction: column;
 }
 .field {
     flex: 1;
@@ -47,20 +48,21 @@ html {
     margin: 0 1%;
     background: linear-gradient(#dedede, #ccc);
 }
-.selected {
+.option:active {
+    background: linear-gradient(#c4b8b8, #999);
+}
+.option.selected {
     border-color: #999;
     opacity: 1;
     background: linear-gradient(#fff, #dedede);
 }
-.option:active {
-    background: linear-gradient(#c4b8b8, #999);
-}
-p {
+.paragraph {
     text-align: left;
     margin-top: 0;
 }
-@media screen and (max-width: 640px) {
+
+@media screen and (min-width: 640px) {
     .fields {
-        flex-direction: column;
+        flex-direction: row;
     }
 }
