@@ -1,17 +1,29 @@
-[
-    {
-        "label": "Sleep Apnea",
-        "options": ["mild", "moderate", "severe"],
-        "value": "mild"
+{
+    "AHI": {
+        "label": "AHI",
+        "value": 100
     },
-    {
+    "CAI": {
+        "label": "CAI",
+        "value": 100
+    },
+    "NADIR": {
         "label": "Central Sleep Apnea",
-        "options": ["mild", "moderate", "severe"],
-        "value": "mild"
+        "value": 100
     },
-    {
-        "label": "Oxygen Average",
-        "options": ["< 88", "> 88"],
-        "value": "< 88"
+    "AVG": {
+        "label": "AVG",
+        "options": ["> 88.1%", "< 88%"],
+        "value": "> 88.1%"
+    },
+    "SEVERITY": {
+        "label": "Supine Severity",
+        "options": ["n/a", "mild", "moderate", "severe"],
+        "value": "n/a"
+    },
+    "CENTRAL": {
+        "label": "Central Sleep Apnea",
+        "options": ["obstructive > central", "central > obstructive"],
+        "value": "obstructive > central"
     }
-]
+}

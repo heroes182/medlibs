@@ -24,12 +24,13 @@
         },
         computed: {
             computedParagraph () {
-                return this.paragraphs.NoOsa;
-            }
-        },
-        methods: {
-            findField (fieldName) {
-                return this.fields.find(field => { return field.label === fieldName });
+                let out;
+                if (this.fields.NADIR.value === '100') out = this.paragraphs.NoOsa;
+                else out = this.paragraphs.OsaMild;
+                return out.replace(/_AHI_/g, this.fields.AHI.value)
+                          .replace(/_AVG_/g, this.fields.AVG.value)
+                          .replace(/_SEVERITY_/g, this.fields.SEVERITY.value)
+                          .replace(/_NADIR_/g, this.fields.NADIR.value);
             }
         }
     };
