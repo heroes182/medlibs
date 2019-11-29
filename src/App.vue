@@ -17,20 +17,26 @@
         },
         data () {
             return {
-                name: 'medlibsForm',
                 fields: fields,
-                paragraphs: paragraphs
             };
         },
         computed: {
             computedParagraph () {
-                let out;
-                if (this.fields.NADIR.value === '100') out = this.paragraphs.NoOsa;
-                else out = this.paragraphs.OsaMild;
-                return out.replace(/_AHI_/g, this.fields.AHI.value)
-                          .replace(/_AVG_/g, this.fields.AVG.value)
-                          .replace(/_SEVERITY_/g, this.fields.SEVERITY.value)
-                          .replace(/_NADIR_/g, this.fields.NADIR.value);
+                let paragraphKey =
+                        this.fields.AHI.value > 5 ? 'NoOsa'
+                        : this.fields.AHI.value < 15 ? 'MildOsa'
+                        : this.fields.AHI.value < 30 ? 'ModerateOsa'
+                        : 'SevereOsa';
+                if (this.fields.CAI.value <= 5) paragraphKey += 'Cai';
+                if (this.fields.AVG.value <= 88) paragraphKey += 'Avg';
+
+                return paragraphs[paragraphKey]
+                    .replace(/_AHI_/g, this.fields.AHI.value)
+                    .replace(/_CAI_/g, this.fields.CAI.value)
+                    .replace(/_AVG_/g, this.fields.AVG.value)
+                    .replace(/_NADIR_/g, this.fields.NADIR.value)
+                    .replace(/_SEVERITY_/g, this.fields.SEVERITY.value)
+                    .replace(/_CENTRAL_/g, this.fields.CENTRAL.value);
             }
         }
     };
