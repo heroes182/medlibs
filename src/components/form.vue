@@ -12,11 +12,12 @@
                     :class="{'selected': option === field.value}"
                     class="option"
                     v-text="option"
-                    @click="field.value = option" />
+                    @click="field.value = option; $root.$emit('updateParagraph')" />
             </div>
             <div class="flex"
                  v-else>
                 <input type="number"
+                       @change="$root.$emit('updateParagraph')"
                        v-model="field.value" />
             </div>
         </div>
