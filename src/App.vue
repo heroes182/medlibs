@@ -23,7 +23,7 @@
         computed: {
             computedParagraph () {
                 let paragraphKey =
-                        this.fields.AHI.value > 5 ? 'NoOsa'
+                        this.fields.AHI.value < 5 ? 'NoOsa'
                         : this.fields.AHI.value < 15 ? 'MildOsa'
                         : this.fields.AHI.value < 30 ? 'ModerateOsa'
                         : 'SevereOsa';
