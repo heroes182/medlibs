@@ -2,7 +2,7 @@
     <div class="fields">
         <div class="field">
             <label class="label"
-                v-text="'Output Paragraph'" />
+                v-text="'Output Paragraph: ' + paragraphKey" />
             <textarea class="paragraph"
                 v-model="paragraph" />
         </div>
@@ -17,6 +17,7 @@
         ],
         data () {
             return {
+                paragraphKey: null,
                 paragraph: null
             };
         },
@@ -28,15 +29,25 @@
         },
         methods: {
             updateParagraph () {
-                let paragraphKey =
-                        this.fields.AHI.value < 5 ? 'NoOsa'
-                        : this.fields.AHI.value < 15 ? 'MildOsa'
-                        : this.fields.AHI.value < 30 ? 'ModerateOsa'
-                        : 'SevereOsa';
-                if (this.fields.CAI.value <= 5) paragraphKey += 'Cai';
-                if (this.fields.AVG.value <= 88) paragraphKey += 'Avg';
+                // Osa
+                this.paragraphKey =
+                    this.fields.AHI.value < 5 ? 'NoOsa'
+                    : this.fields.AHI.value < 15 ? 'MildOsa'
+                    : this.fields.AHI.value < 30 ? 'ModerateOsa'
+                    : 'SevereOsa';
 
-                this.paragraph = paragraphs[paragraphKey]
+                // Cai
+                this.paragraphKey +=
+                    this.fields.CAI.value < 5 ? 'Solo'
+                    : 'Mixed';
+
+                // Avg
+                this.paragraphKey +=
+                    this.fields.AVG.value < 88 ? 'AvgNeg'
+                    : 'AvgPos';
+
+                this.paragraph =
+                    paragraphs[this.paragraphKey]
                     .replace(/_AHI_/g, this.fields.AHI.value)
                     .replace(/_CAI_/g, this.fields.CAI.value)
                     .replace(/_AVG_/g, this.fields.AVG.value)

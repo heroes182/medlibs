@@ -1,15 +1,15 @@
 {
     "AHI": {
         "label": "AHI",
-        "value": 1
+        "value": 0
     },
     "CAI": {
         "label": "CAI",
-        "value": 5.1
+        "value": 0
     },
     "AVG": {
         "label": "AVG",
-        "value": 88.1
+        "value": 0
     },
     "NADIR": {
         "label": "NADIR",
