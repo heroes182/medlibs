@@ -30,11 +30,13 @@
         methods: {
             updateParagraph () {
                 // Osa
-                this.paragraphKey =
-                    this.fields.AHI.value < 5 ? 'NoOsa'
-                    : this.fields.AHI.value < 15 ? 'MildOsa'
-                    : this.fields.AHI.value < 30 ? 'ModerateOsa'
-                    : 'SevereOsa';
+                let Osa =
+                    this.fields.AHI.value < 5 ? 'No'
+                    : this.fields.AHI.value < 15 ? 'Mild'
+                    : this.fields.AHI.value < 30 ? 'Moderate'
+                    : 'Severe';
+
+                this.paragraphKey = Osa + 'Osa';
 
                 // Cai
                 this.paragraphKey +=
@@ -43,11 +45,16 @@
 
                 // Avg
                 this.paragraphKey +=
-                    this.fields.AVG.value < 88 ? 'AvgNeg'
+                    this.fields.AVG.value > 88 ? 'AvgNeg'
                     : 'AvgPos';
 
                 this.paragraph =
-                    paragraphs[this.paragraphKey]
+                    paragraphs[paragraphs[this.paragraphKey]]
+                    || paragraphs[this.paragraphKey];
+                
+                this.paragraph =
+                    this.paragraph
+                    .replace(/_OSA_/g, Osa)
                     .replace(/_AHI_/g, this.fields.AHI.value)
                     .replace(/_CAI_/g, this.fields.CAI.value)
                     .replace(/_AVG_/g, this.fields.AVG.value)
